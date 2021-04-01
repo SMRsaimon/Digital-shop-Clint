@@ -1,0 +1,13 @@
+.adminPannel-button-left {
+  text-decoration: none;
+  color: black;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-left: 18px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.adminPannel-button-left span {
+  margin-left: 1rem;
+}
