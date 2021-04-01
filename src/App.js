@@ -14,6 +14,7 @@ import Orders from './components/Orders/Orders';
 import Deals from './components/Deals/Deals';
 import Admin from './components/Admin/Admin';
 import LogIn from './components/LogIn/LogIn';
+import CheckOut from './components/CheckOut/CheckOut';
 
 
 export const userContext = createContext()
@@ -50,11 +51,15 @@ function App() {
           <Route path="/logIn">
             <Header ></Header>
             <LogIn></LogIn>
+
+          </Route>
+          <Route path="/CheckOut/:id">
+            <Header ></Header>
+            <CheckOut></CheckOut>
+
           </Route>
         </Switch>
       </Router>
-
-
 
     </userContext.Provider>
   );

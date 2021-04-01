@@ -123,9 +123,9 @@ const Admin = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            Mini variant drawer
-          </Typography>
+          <Link to="/" className="backtoHomePage">
+            Home Page
+          </Link>
         </Toolbar>
       </AppBar>
       <Drawer

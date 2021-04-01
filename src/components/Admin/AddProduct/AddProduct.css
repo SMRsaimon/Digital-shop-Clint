@@ -27,6 +27,9 @@ input {
 .form-contant {
   padding: 20px;
 }
+.successMessage {
+  color: green;
+}
 .submitForm {
   width: 200px;
   cursor: pointer;

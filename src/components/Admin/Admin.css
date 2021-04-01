@@ -11,3 +11,8 @@
 .adminPannel-button-left span {
   margin-left: 1rem;
 }
+.backtoHomePage {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: larger;
+}
