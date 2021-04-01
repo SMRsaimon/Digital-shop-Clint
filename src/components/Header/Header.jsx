@@ -126,7 +126,7 @@ const Header = () => {
       onClose={handleMenuClose}
     >
       <Link to="/logIn">
-        <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+        <MenuItem onClick={handleMenuClose}>{name || displayName ? "Log Out" : "Log In"} </MenuItem>
       </Link>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
@@ -182,7 +182,7 @@ const Header = () => {
         <IconButton aria-label="account of current user" aria-controls="primary-search-account-menu" aria-haspopup="true" color="inherit">
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        <p>LogIn</p>
       </MenuItem>
     </Menu>
   );
@@ -239,14 +239,6 @@ const Header = () => {
             </div>
             <div className={classes.grow} />
 
-            {/* Shopping cut Icon  */}
-            {/* <Badge badgeContent={props.totalCut.length} color="secondary">
-              <Link style={{ color: "white" }} to="/Cut">
-                <ShoppingCartIcon />
-              </Link>
-            </Badge> */}
-
-            {/* Left icon message and notification  */}
             <div className={classes.sectionDesktop}>
               <IconButton
                 edge="end"

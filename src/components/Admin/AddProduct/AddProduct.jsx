@@ -9,6 +9,20 @@ const AddProduct = () => {
 
   const [response, setResponse] = useState(null);
 
+  const hendelImageUploaded = (e) => {
+    const imageData = new FormData();
+    imageData.set("key", "d44197f19af0453e3bbce1980ee41405");
+    imageData.append("image", e.target.files[0]);
+
+    axios
+      .post("https://api.imgbb.com/1/upload", imageData)
+      .then((response) => {
+        setImgURL(response.data.data.display_url);
+      })
+      .catch((error) => {
+        console.log("img error", error);
+      });
+  };
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
     const productInfo = {
@@ -36,20 +50,6 @@ const AddProduct = () => {
       });
   };
 
-  const hendelImageUploaded = (e) => {
-    const imageData = new FormData();
-    imageData.set("key", "d44197f19af0453e3bbce1980ee41405");
-    imageData.append("image", e.target.files[0]);
-
-    axios
-      .post("https://api.imgbb.com/1/upload", imageData)
-      .then((response) => {
-        setImgURL(response.data.data.display_url);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
   useEffect(() => {
     setInterval(() => {
       setResponse(false);

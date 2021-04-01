@@ -13,7 +13,7 @@ const Shop = (props) => {
 
   }
 
-  const { name, price, img, _id } = props.product;
+  const { name, price, img, _id, wight } = props.product;
 
   return (
     <Grid item xs={8} sm={6} md={3}>
@@ -26,7 +26,7 @@ const Shop = (props) => {
             </Typography>
 
             <Typography variant="body2" color="textPrimary" component="p">
-              ${price}
+              ${price} <spn className="brackPoint">wight: {wight} </spn>
             </Typography>
           </CardContent>
         </CardActionArea>

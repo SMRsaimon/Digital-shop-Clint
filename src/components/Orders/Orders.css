@@ -1,0 +1,22 @@
+.OrderConatiner {
+  width: 70%;
+  margin: 200px auto;
+}
+.OrderConatiner h1 {
+  text-align: center;
+  border-bottom: 2px solid gray;
+}
+.contantContainer {
+}
+.conatnt {
+  background-color: rgb(189, 185, 185);
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.conatnt p {
+  color: teal;
+  font-size: 18px;
+}
+.conatnt p > span {
+  padding: 0px 30px;
+}

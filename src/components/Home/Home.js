@@ -1,6 +1,7 @@
 import { Grid } from '@material-ui/core';
 
 import React, { useEffect, useState } from 'react';
+import Loader from 'react-loader-spinner';
 import Shop from '../Shop/Shop';
 
 import "./Home.css"
@@ -31,7 +32,16 @@ const Home = () => {
       <Grid container spacing={4}
         justify="center" direction="row" >
         {
-          products.map((pd) => <Shop key={pd._id} product={pd}></Shop>)
+
+          products.length === 0 ? <div className="spinner-home-page"><Loader
+            type="Circles"
+            color="#00BFFF"
+            height={100}
+            width={100}
+
+
+          /> </div> :
+            products.map((pd) => <Shop key={pd._id} product={pd}></Shop>)
 
         }
       </Grid>

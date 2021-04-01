@@ -1,5 +1,7 @@
 
 import './App.css';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 import Header from './components/Header/Header';
 import {
   BrowserRouter as Router,
@@ -15,6 +17,8 @@ import Deals from './components/Deals/Deals';
 import Admin from './components/Admin/Admin';
 import LogIn from './components/LogIn/LogIn';
 import CheckOut from './components/CheckOut/CheckOut';
+import PrivateRoute from './components/PrivateRoute';
+import NotMatch from './components/NoMatch/NotMatch';
 
 
 export const userContext = createContext()
@@ -37,26 +41,30 @@ function App() {
             <Header ></Header>
             <Home></Home>
           </Route>
-          <Route path="/Orders">
+          <PrivateRoute path="/Orders">
             <Header ></Header>
             <Orders></Orders>
-          </Route>
+          </PrivateRoute>
           <Route path="/Deals">
             <Header ></Header>
             <Deals></Deals>
           </Route>
-          <Route path="/Admin">
+          <PrivateRoute path="/Admin">
             <Admin></Admin>
-          </Route>
+          </PrivateRoute>
           <Route path="/logIn">
             <Header ></Header>
             <LogIn></LogIn>
 
           </Route>
-          <Route path="/CheckOut/:id">
+          <PrivateRoute path="/CheckOut/:id">
             <Header ></Header>
             <CheckOut></CheckOut>
 
+          </PrivateRoute>
+          <Route path="*">
+            <Header ></Header>
+            <NotMatch></NotMatch>
           </Route>
         </Switch>
       </Router>

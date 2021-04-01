@@ -8,6 +8,9 @@
   position: relative;
   top: 50px;
 }
+.brackPoint {
+  margin-left: 20px;
+}
 
 .Card-img {
   width: 120px;
