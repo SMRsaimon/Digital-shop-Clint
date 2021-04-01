@@ -13,7 +13,7 @@ const CheckOut = () => {
   const { name, price, wight, img } = buyProduct;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/buyProduct/${id}`)
+    fetch(`https://cherry-tart-53452.herokuapp.com/buyProduct/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setBuyProduct(data);
@@ -26,7 +26,7 @@ const CheckOut = () => {
 
     console.log(cheeckOutDetails);
 
-    fetch("http://localhost:5000/checkOut", {
+    fetch("https://cherry-tart-53452.herokuapp.com/checkOut", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

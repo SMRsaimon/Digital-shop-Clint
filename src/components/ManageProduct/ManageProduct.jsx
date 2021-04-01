@@ -7,7 +7,7 @@ const ManageProduct = () => {
   const [deleteIteam, setDeleteIteam] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/home")
+    fetch("https://cherry-tart-53452.herokuapp.com/home")
       .then((res) => res.json())
       .then((data) => {
         setManageProduct(data);
@@ -18,7 +18,7 @@ const ManageProduct = () => {
   }, []);
 
   const hendelDelete = (id) => {
-    fetch("http://localhost:5000/deleteProduct/" + id, {
+    fetch("https://cherry-tart-53452.herokuapp.com/deleteProduct/" + id, {
       method: "DELETE",
       headers: {
         "Contant-Type": "application/json",
@@ -33,7 +33,7 @@ const ManageProduct = () => {
   };
 
   const removeItean = () => {
-    fetch("http://localhost:5000/home")
+    fetch("https://cherry-tart-53452.herokuapp.com/home")
       .then((res) => res.json())
       .then((data) => {
         setManageProduct(data);

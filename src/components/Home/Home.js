@@ -13,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
 
-    fetch("http://localhost:5000/home")
+    fetch("https://cherry-tart-53452.herokuapp.com/home")
       .then(res => res.json())
       .then(data => {
         setProduct(data)
