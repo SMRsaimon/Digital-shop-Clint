@@ -58,42 +58,45 @@ const AddProduct = () => {
 
   console.log(response);
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      {response && (
-        <span className="successMessage">
-          <CheckCircleOutlineRoundedIcon /> SuccessFully added
-        </span>
-      )}
-      <div className="form-group">
-        <div className="form-conatiner">
-          <div className="form-contant">
-            <label>Product Name </label>
-            <input type="text" placeholder="Enter Product Name" name="productName" ref={register({ required: true })} />
-            {errors.productName && <span>This field is required</span>}
+    <>
+      <h1 className="addProduct-heading">Add Product</h1>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        {response && (
+          <span className="successMessage">
+            <CheckCircleOutlineRoundedIcon /> SuccessFully added
+          </span>
+        )}
+        <div className="form-group">
+          <div className="form-conatiner">
+            <div className="form-contant">
+              <label>Product Name </label>
+              <input type="text" placeholder="Enter Product Name" name="productName" ref={register({ required: true })} />
+              {errors.productName && <span className="require">This field is required</span>}
+            </div>
+            <div className="form-contant">
+              <label>Product price </label>
+              <input placeholder="Enter Product price" type="number" name="price" ref={register({ required: true })} />
+              {errors.price && <span className="require">This field is required</span>}
+            </div>
           </div>
-          <div className="form-contant">
-            <label>Product price </label>
-            <input placeholder="Enter Product price" type="number" name="price" ref={register({ required: true })} />
-            {errors.price && <span>This field is required</span>}
+          <div className="form-conatiner">
+            <div className="form-contant">
+              <label> Wight </label>
+
+              <input placeholder="Enter Product wight" type="text" name="wight" ref={register({ required: false })} />
+            </div>
+            <div className="form-contant">
+              <label>Add Photo </label>
+
+              <input onChange={hendelImageUploaded} type="file" name="img" ref={register({ required: true })} />
+              {errors.img && <span className="require">This field is required</span>}
+            </div>
           </div>
         </div>
-        <div className="form-conatiner">
-          <div className="form-contant">
-            <label> Wight </label>
 
-            <input placeholder="Enter Product wight" type="text" name="wight" ref={register({ required: false })} />
-          </div>
-          <div className="form-contant">
-            <label>Add Photo </label>
-
-            <input onChange={hendelImageUploaded} type="file" name="img" ref={register({ required: true })} />
-            {errors.img && <span>This field is required</span>}
-          </div>
-        </div>
-      </div>
-
-      <input className="submitForm" type="submit" value="Save" />
-    </form>
+        <input className="submitForm" type="submit" value="Save" />
+      </form>
+    </>
   );
 };
 

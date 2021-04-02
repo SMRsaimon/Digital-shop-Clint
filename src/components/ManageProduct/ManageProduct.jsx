@@ -45,6 +45,7 @@ const ManageProduct = () => {
 
   return (
     <div>
+      <h1 className="manageProduct-heading">Manage Product</h1>
       <div className="manageContainerHeading">
         <div className="name">
           <span> ProductName</span>
