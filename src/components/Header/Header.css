@@ -1,41 +1,44 @@
-.manu-left-toggle-link{
+.manu-left-toggle-link {
   text-decoration: none;
   color: gray;
 }
-.manue-iteam{
+.manue-iteam {
   margin-left: 1.5rem;
 }
-.manu-middle-toggle-link{
+.manu-middle-toggle-link {
   text-decoration: none;
   color: aliceblue;
-  padding: 0 10px ;
+  padding: 0 10px;
 }
 
-.userImageLogo{
-     width: 30px;
-    height: 30px;
-    border-radius: 50%;
-
+.userImageLogo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
-.userDisplayNameHeader{
+.userDisplayNameHeader {
   font-size: 1rem;
+  margin-right: 15px;
+}
+
+.logOut {
+  border: none;
+  background-color: white;
+}
+.manueIteam-wrapper {
+  margin-top: 40px;
 }
 /* Header responsive Media quariy  */
 
-@media (max-width:1000px){
-
-.manue-iteam{
-  margin-left: 0px;
-   padding: 0 5px ;
-}
-}
-
-
-@media (max-width:850px){
-
-.manue-iteam{
-  display: none;
+@media (max-width: 1000px) {
+  .manue-iteam {
+    margin-left: 0px;
+    padding: 0 5px;
+  }
 }
 
+@media (max-width: 850px) {
+  .manue-iteam {
+    display: none;
+  }
 }
-

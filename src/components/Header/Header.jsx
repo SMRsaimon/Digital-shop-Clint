@@ -14,6 +14,7 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import { userContext } from "../../App";
+import { logInframWork, hendelLogOut } from "../FirebaseAuth";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -80,8 +81,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Header = () => {
-  const { user } = useContext(userContext);
+  const { user, setUser } = useContext(userContext);
   const { displayName, photoURL, name } = user;
+  // hendel LogOut
+  logInframWork();
+
+  const hendelLogOutUser = () => {
+    hendelLogOut()
+      .then(() => {
+        setUser({
+          displayName: "",
+          photoURL: "",
+          name: "",
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -124,11 +141,19 @@ const Header = () => {
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMenuOpen}
       onClose={handleMenuClose}
+      className="manueIteam-wrapper"
     >
-      <Link to="/logIn">
-        <MenuItem onClick={handleMenuClose}>{name || displayName ? "Log Out" : "Log In"} </MenuItem>
-      </Link>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      {name || displayName ? (
+        <button onClick={hendelLogOutUser} className="logOut">
+          <MenuItem onClick={handleMenuClose}>Log Out </MenuItem>
+        </button>
+      ) : (
+        <Link to="/logIn">
+          <MenuItem onClick={handleMenuClose}>Log In </MenuItem>
+        </Link>
+      )}
+
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
     </Menu>
   );
   // Toggle menue left
@@ -182,7 +207,7 @@ const Header = () => {
         <IconButton aria-label="account of current user" aria-controls="primary-search-account-menu" aria-haspopup="true" color="inherit">
           <AccountCircle />
         </IconButton>
-        <p>LogIn</p>
+        <p>My Account </p>
       </MenuItem>
     </Menu>
   );

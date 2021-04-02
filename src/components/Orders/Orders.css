@@ -14,8 +14,10 @@
   margin-bottom: 5px;
 }
 .conatnt p {
-  color: teal;
+  color: rgba(15, 15, 15, 0.596);
   font-size: 18px;
+  display: flex;
+  justify-content: space-around;
 }
 .conatnt p > span {
   padding: 0px 30px;
